@@ -11,7 +11,7 @@ public class Person {
 	private LocalDate dateOfBirth;
 	private int orientationId;
 	private Timestamp lastOnline;
-	private boolean SMOKER;
+	private boolean smoker;
 	private Status status;
 	private int cityId;
 	private String introduction;
@@ -57,11 +57,11 @@ public class Person {
 	public void setLastOnline(Timestamp lastOnline) {
 		this.lastOnline = lastOnline;
 	}
-	public boolean isSMOKER() {
-		return SMOKER;
+	public boolean isSmoker() {
+		return smoker;
 	}
-	public void setSMOKER(boolean sMOKER) {
-		SMOKER = sMOKER;
+	public void setSmoker(boolean smoker) {
+		this.smoker = smoker;
 	}
 	public Status getStatus() {
 		return status;
@@ -85,7 +85,7 @@ public class Person {
 
 	}
 	public Person(int personID, Gender gender, String userName, String email, LocalDate dateOfBirth, int orientationId,
-			Timestamp lastOnline, boolean sMOKER, Status status, int cityId, String introduction) {
+			Timestamp lastOnline, boolean smoker, Status status, int cityId, String introduction) {
 
 		this.personID = personID;
 		this.gender = gender;
@@ -94,7 +94,7 @@ public class Person {
 		this.dateOfBirth = dateOfBirth;
 		this.orientationId = orientationId;
 		this.lastOnline = lastOnline;
-		SMOKER = sMOKER;
+		this.smoker = smoker;
 		this.status = status;
 		this.cityId = cityId;
 		this.introduction = introduction;
