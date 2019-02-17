@@ -1,6 +1,6 @@
-DROP TABLE person;
+--DROP TABLE person;
 
-DROP SEQUENCE person_seq;
+--DROP SEQUENCE person_seq;
 
 CREATE TABLE person (
     person_id        NUMBER(20) NOT NULL,
