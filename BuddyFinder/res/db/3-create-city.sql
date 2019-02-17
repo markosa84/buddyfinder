@@ -17,3 +17,5 @@ INSERT INTO city VALUES(8, 'Nyíregyháza');
 INSERT INTO city VALUES(9, 'Győr');
 INSERT INTO city VALUES(10, 'Szombathely');
 INSERT INTO city VALUES(11, 'Egyéb');
+
+COMMIT;

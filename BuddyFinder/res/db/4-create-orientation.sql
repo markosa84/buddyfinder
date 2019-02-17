@@ -9,3 +9,5 @@ CREATE TABLE orientation (
 INSERT INTO orientation (orientation_id,orientation_name) VALUES (1, 'HETEROSEXUAL');
 INSERT INTO orientation (orientation_id,orientation_name) VALUES (2, 'HOMOSEXUAL');
 INSERT INTO orientation (orientation_id,orientation_name) VALUES (3, 'BISEXUAL');
+
+COMMIT;

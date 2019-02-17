@@ -12,3 +12,5 @@ INSERT INTO goal (goal_id, NAME) VALUES (3, 'SzadoMazo');
 INSERT INTO goal (goal_id, NAME) VALUES (4, 'Kecske');
 INSERT INTO goal (goal_id, NAME) VALUES (5, 'Társasjáték');
 INSERT INTO goal (goal_id, NAME) VALUES (6, 'Túra');
+
+COMMIT;
