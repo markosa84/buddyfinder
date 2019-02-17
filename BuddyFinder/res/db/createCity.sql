@@ -1,17 +1,19 @@
-create table city (
-    city_id number(20) not null,
-    city_name varchar(50) not null,
-    CONSTRAINT city_pk PRIMARY KEY ( city_id )
+--DROP TABLE city;
+
+CREATE TABLE city (
+    city_id     NUMBER(20) NOT NULL,
+    city_name   VARCHAR(50) NOT NULL,
+    CONSTRAINT city_pk PRIMARY KEY (city_id)
 );
 
-Insert into city values(1,'Budapest');
-Insert into city values(2,'Szeged');
-Insert into city values(3,'Debrecen');
-Insert into city values(4,'Pécs');
-Insert into city values(5,'Miskolc');
-Insert into city values(6,'Kecskemét');
-Insert into city values(7,'Székesfehérvár');
-Insert into city values(8,'Nyíregyháza');
-Insert into city values(9,'Győr');
-Insert into city values(10,'Szombathely');
-Insert into city values(11,'Egyéb');
+INSERT INTO city VALUES(1, 'Budapest');
+INSERT INTO city VALUES(2, 'Szeged');
+INSERT INTO city VALUES(3, 'Debrecen');
+INSERT INTO city VALUES(4, 'Pécs');
+INSERT INTO city VALUES(5, 'Miskolc');
+INSERT INTO city VALUES(6, 'Kecskemét');
+INSERT INTO city VALUES(7, 'Székesfehérvár');
+INSERT INTO city VALUES(8, 'Nyíregyháza');
+INSERT INTO city VALUES(9, 'Győr');
+INSERT INTO city VALUES(10, 'Szombathely');
+INSERT INTO city VALUES(11, 'Egyéb');
