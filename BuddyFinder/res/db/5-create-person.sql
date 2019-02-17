@@ -1,4 +1,4 @@
---DROP TABLE person;
+--DROP TABLE person CASCADE CONSTRAINTS;
 
 --DROP SEQUENCE person_seq;
 
@@ -14,20 +14,12 @@ CREATE TABLE person (
     status           CHAR(1) NOT NULL,
     city_id          NUMBER(20),
     introduction     VARCHAR2(4000),
-    CONSTRAINT person_pk PRIMARY KEY ( person_id ),
-    CONSTRAINT person_fk1 FOREIGN KEY ( orientation_id )
-        REFERENCES orientation ( orientation_id ),
-    CONSTRAINT person_fk2 FOREIGN KEY ( city_id )
-        REFERENCES city ( city_id ),
-    CONSTRAINT person_ck1 CHECK ( smoker IS NULL
-                                  OR smoker IN (
-        'Y',
-        'N'
-    ) ),
-    CONSTRAINT person_ck2 CHECK ( status IN (
-        'A',
-        'D'
-    ) )
+    CONSTRAINT person_pk PRIMARY KEY (person_id),
+    CONSTRAINT person_fk1 FOREIGN KEY (orientation_id) REFERENCES orientation (orientation_id),
+    CONSTRAINT person_fk2 FOREIGN KEY (city_id) REFERENCES city (city_id),
+    CONSTRAINT person_ck1 CHECK (smoker IS NULL OR smoker IN ('Y', 'N')),
+    CONSTRAINT person_ck2 CHECK (status IN ('A', 'D')),
+    CONSTRAINT person_ck3 CHECK (gender IN ('M', 'F'))
 );
 
 CREATE SEQUENCE person_seq;
