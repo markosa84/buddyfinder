@@ -1,11 +1,11 @@
 package hu.ak_akademia.buddyfinder.dto;
 
-public class goal {
+public class Goal {
 	
 	private final int goalId;
 	private final String name;
 
-	public goal(int goalId, String name) {
+	public Goal(int goalId, String name) {
 		this.goalId = goalId;
 		this.name = name;
 	}
