@@ -63,7 +63,6 @@ public class PersonSQLBuilder extends AbstractSQLBuilder {
 	public String updateStatement(int id) {
 		clearStringBuilderRepository();
 		sb.append("UPDATE person SET      ");
-        sb.append("    person_id = ?,     ");
         sb.append("    gender= ?,         ");
         sb.append("    user_name= ?,      ");
         sb.append("    email= ?,          ");

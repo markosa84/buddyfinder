@@ -13,5 +13,5 @@ public interface DataBaseDao<T> {
 
 	List<T> read(T entity);
 
-	Connection createConnection();
+	Connection createConnection() throws Throwable;
 }
