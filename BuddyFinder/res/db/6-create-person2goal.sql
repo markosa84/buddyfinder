@@ -10,3 +10,5 @@ CREATE TABLE person2goal (
     CONSTRAINT person2goal_fk2 FOREIGN KEY (goal_id)
         REFERENCES goal(goal_id)
 );
+
+CREATE SEQUENCE  "BUDDYFINDER"."PERSON2GOAL_SEQ";

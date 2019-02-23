@@ -3,9 +3,9 @@ package hu.ak_akademia.buddyfinder.dto;
 public class Orientation {
 
 	private final int orientationId;
-	private final int orientationName;
+	private final String orientationName;
 
-	public Orientation(int orientationId, int orientationName) {
+	public Orientation(int orientationId, String orientationName) {
 		this.orientationId = orientationId;
 		this.orientationName = orientationName;
 	}
@@ -14,7 +14,7 @@ public class Orientation {
 		return orientationId;
 	}
 
-	public int getOrientationName() {
+	public String getOrientationName() {
 		return orientationName;
 	}
 
@@ -23,7 +23,7 @@ public class Orientation {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + orientationId;
-		result = prime * result + orientationName;
+		result = prime * result + ((orientationName == null) ? 0 : orientationName.hashCode());
 		return result;
 	}
 
@@ -38,7 +38,10 @@ public class Orientation {
 		Orientation other = (Orientation) obj;
 		if (orientationId != other.orientationId)
 			return false;
-		if (orientationName != other.orientationName)
+		if (orientationName == null) {
+			if (other.orientationName != null)
+				return false;
+		} else if (!orientationName.equals(other.orientationName))
 			return false;
 		return true;
 	}
