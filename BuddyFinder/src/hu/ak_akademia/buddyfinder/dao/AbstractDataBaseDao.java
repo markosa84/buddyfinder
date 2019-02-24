@@ -11,24 +11,24 @@ import hu.ak_akademia.buddyfinder.dao.sql.SQLBuilder;
 
 public abstract class AbstractDataBaseDao<T> implements DataBaseDao<T> {
 
-	protected SQLBuilder sqlBuilder;
+    protected SQLBuilder sqlBuilder;
 
-	@Override
-	public Connection createConnection() throws SQLException {
-		try {
-			Properties p = new Properties();
-			p.load(new FileInputStream("res/bf.properties"));
-			System.out.println("Connection ...");
-			Connection connection = DriverManager.getConnection(p.getProperty("url"),
-					p.getProperty("name"), p.getProperty("password"));
-			System.out.println(" ... success.");
-			return connection;
-		} catch (SQLException e) {
-			System.out.println(" ... failed.");
-			throw e;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+    @Override
+    public Connection createConnection() {
+        try {
+            Properties dbProperties = new Properties();
+            dbProperties.load(new FileInputStream("res/buddyfinder-db.properties"));
+            System.out.print("Csatlakozás az adatbázishoz...");
+            Connection connection = DriverManager.getConnection(dbProperties.getProperty("url"), dbProperties.getProperty("name"), dbProperties.getProperty("password"));
+            System.out.println("sikeres.");
+            return connection;
+        } catch (SQLException e) {
+            System.out.println("sikertelen.");
+            throw new IllegalStateException("Nem sikerült csatlakozni az adatbázishoz.", e);
+        } catch (IOException e) {
+            System.out.println("sikertelen.");
+            throw new IllegalStateException("Nem sikerült csatlakozni az adatbázishoz, mert nem található az adatbázis beállításait tartalmazó fájl.", e);
+        }
+    }
+
 }

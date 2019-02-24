@@ -5,13 +5,14 @@ import java.util.List;
 
 public interface DataBaseDao<T> {
 
-	void create(T entity);
+    void create(T entity);
 
-	void update(T entity);
+    void update(T entity);
 
-	void delete(T entity);
+    void delete(T entity);
 
-	List<T> read(T entity);
+    List<T> read(T entity);
 
-	Connection createConnection() throws Throwable;
+    Connection createConnection();
+
 }
