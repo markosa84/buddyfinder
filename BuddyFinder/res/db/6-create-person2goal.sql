@@ -1,3 +1,5 @@
+--DROP SEQUENCE person2goal_seq;
+
 --DROP TABLE person2goal;
 
 CREATE TABLE person2goal (
@@ -11,4 +13,4 @@ CREATE TABLE person2goal (
         REFERENCES goal(goal_id)
 );
 
-CREATE SEQUENCE  PERSON2GOAL_SEQ;
+CREATE SEQUENCE person2goal_seq;
