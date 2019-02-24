@@ -33,7 +33,7 @@ public class PersonDao extends AbstractDataBaseDao<Person> {
 											entity.getDateOfBirth().getDayOfMonth()));
 			statement.setInt(5, entity.getOrientationId());
 			statement.setTimestamp(6, entity.getLastOnline());
-			statement.setString(7, entity.isSmoker() ? "Y" : "N");
+			statement.setString(7, entity.getSmoker() ? "Y" : "N");
 			statement.setString(8, "" + entity.getStatus().getSign());
 			statement.setInt(9, entity.getCityId());
 			statement.setString(10, entity.getIntroduction());
@@ -61,7 +61,7 @@ public class PersonDao extends AbstractDataBaseDao<Person> {
 											entity.getDateOfBirth().getDayOfMonth()));
 			statement.setInt(5, entity.getOrientationId());
 			statement.setTimestamp(6, entity.getLastOnline());
-			statement.setString(7, entity.isSmoker() ? "Y" : "N");
+			statement.setString(7, entity.getSmoker() ? "Y" : "N");
 			statement.setString(8, "" + entity.getStatus().getSign());
 			statement.setInt(9, entity.getCityId());
 			statement.setString(10, entity.getIntroduction());
@@ -105,7 +105,5 @@ public class PersonDao extends AbstractDataBaseDao<Person> {
 		}
 		return persons;
 	}
-
-	
 
 }
