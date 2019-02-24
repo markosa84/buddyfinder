@@ -4,25 +4,25 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Person {
-	private int personID;
+	private Integer personID;
 	private Gender gender;
 	private String userName;
 	private String email;
 	private LocalDate dateOfBirth;
-	private int orientationId;
+	private Integer orientationId;
 	private Timestamp lastOnline;
-	private boolean smoker;
+	private Boolean smoker;
 	private Status status;
-	private int cityId;
+	private Integer cityId;
 	private String introduction;
 	
 	public Person() {
 	
 	}
-	
-	public Person(int personID, Gender gender, String userName, String email, LocalDate dateOfBirth, int orientationId,
-			Timestamp lastOnline, boolean smoker, Status status, int cityId, String introduction) {
-	
+
+	public Person(Integer personID, Gender gender, String userName, String email, LocalDate dateOfBirth,
+			Integer orientationId, Timestamp lastOnline, Boolean smoker, Status status, Integer cityId,
+			String introduction) {
 		this.personID = personID;
 		this.gender = gender;
 		this.userName = userName;
@@ -35,102 +35,113 @@ public class Person {
 		this.cityId = cityId;
 		this.introduction = introduction;
 	}
-	
-	public int getPersonID() {
+
+	public Integer getPersonID() {
 		return personID;
 	}
-	public void setPersonID(int personID) {
+
+	public void setPersonID(Integer personID) {
 		this.personID = personID;
 	}
-	
+
 	public Gender getGender() {
 		return gender;
 	}
+
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
+
 	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-	
-	public int getOrientationId() {
+
+	public Integer getOrientationId() {
 		return orientationId;
 	}
-	public void setOrientationId(int orientationId) {
+
+	public void setOrientationId(Integer orientationId) {
 		this.orientationId = orientationId;
 	}
-	
+
 	public Timestamp getLastOnline() {
 		return lastOnline;
 	}
+
 	public void setLastOnline(Timestamp lastOnline) {
 		this.lastOnline = lastOnline;
 	}
-	
-	public boolean isSmoker() {
+
+	public Boolean getSmoker() {
 		return smoker;
 	}
-	public void setSmoker(boolean smoker) {
+
+	public void setSmoker(Boolean smoker) {
 		this.smoker = smoker;
 	}
-	
+
 	public Status getStatus() {
 		return status;
 	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
-	public int getCityId() {
+
+	public Integer getCityId() {
 		return cityId;
 	}
-	public void setCityId(int cityId) {
+
+	public void setCityId(Integer cityId) {
 		this.cityId = cityId;
 	}
-	
+
 	public String getIntroduction() {
 		return introduction;
 	}
+
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + cityId;
+		result = prime * result + ((cityId == null) ? 0 : cityId.hashCode());
 		result = prime * result + ((dateOfBirth == null) ? 0 : dateOfBirth.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
 		result = prime * result + ((introduction == null) ? 0 : introduction.hashCode());
 		result = prime * result + ((lastOnline == null) ? 0 : lastOnline.hashCode());
-		result = prime * result + orientationId;
-		result = prime * result + personID;
-		result = prime * result + (smoker ? 1231 : 1237);
+		result = prime * result + ((orientationId == null) ? 0 : orientationId.hashCode());
+		result = prime * result + ((personID == null) ? 0 : personID.hashCode());
+		result = prime * result + ((smoker == null) ? 0 : smoker.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -143,7 +154,11 @@ public class Person {
 			return false;
 		}
 		Person other = (Person) obj;
-		if (cityId != other.cityId) {
+		if (cityId == null) {
+			if (other.cityId != null) {
+				return false;
+			}
+		} else if (!cityId.equals(other.cityId)) {
 			return false;
 		}
 		if (dateOfBirth == null) {
@@ -177,13 +192,25 @@ public class Person {
 		} else if (!lastOnline.equals(other.lastOnline)) {
 			return false;
 		}
-		if (orientationId != other.orientationId) {
+		if (orientationId == null) {
+			if (other.orientationId != null) {
+				return false;
+			}
+		} else if (!orientationId.equals(other.orientationId)) {
 			return false;
 		}
-		if (personID != other.personID) {
+		if (personID == null) {
+			if (other.personID != null) {
+				return false;
+			}
+		} else if (!personID.equals(other.personID)) {
 			return false;
 		}
-		if (smoker != other.smoker) {
+		if (smoker == null) {
+			if (other.smoker != null) {
+				return false;
+			}
+		} else if (!smoker.equals(other.smoker)) {
 			return false;
 		}
 		if (status != other.status) {
@@ -198,7 +225,7 @@ public class Person {
 		}
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

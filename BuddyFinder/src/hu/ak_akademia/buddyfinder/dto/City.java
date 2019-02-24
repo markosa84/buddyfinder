@@ -10,9 +10,9 @@ public class City {
         this.cityName = cityName;
     }
 
-    public Integer getCityId() {
-        return cityId;
-    }
+	public Integer getCityId() {
+		return cityId;
+	}
 
     public String getCityName() {
         return cityName;
