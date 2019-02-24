@@ -2,15 +2,15 @@ package hu.ak_akademia.buddyfinder.dto;
 
 public class Orientation {
 
-	private final int orientationId;
+	private final Integer orientationId;
 	private final String orientationName;
 
-	public Orientation(int orientationId, String orientationName) {
+	public Orientation(Integer orientationId, String orientationName) {
 		this.orientationId = orientationId;
 		this.orientationName = orientationName;
 	}
 
-	public int getOrientationId() {
+	public Integer getOrientationId() {
 		return orientationId;
 	}
 
@@ -22,7 +22,7 @@ public class Orientation {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + orientationId;
+		result = prime * result + ((orientationId == null) ? 0 : orientationId.hashCode());
 		result = prime * result + ((orientationName == null) ? 0 : orientationName.hashCode());
 		return result;
 	}
@@ -36,7 +36,10 @@ public class Orientation {
 		if (getClass() != obj.getClass())
 			return false;
 		Orientation other = (Orientation) obj;
-		if (orientationId != other.orientationId)
+		if (orientationId == null) {
+			if (other.orientationId != null)
+				return false;
+		} else if (!orientationId.equals(other.orientationId))
 			return false;
 		if (orientationName == null) {
 			if (other.orientationName != null)
