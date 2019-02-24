@@ -73,5 +73,5 @@ public class Person2Goal {
 		builder.append("]");
 		return builder.toString();
 	}
-
+ 
 }
