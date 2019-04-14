@@ -2,16 +2,26 @@ package hu.ak_akademia.buddyfinder.dto;
 
 public enum Gender {
 
-    MALE('M'), FEMALE('F');
+    MALE("M"), FEMALE("F");
 
-    private final char sign;
+    private final String sign;
 
-    private Gender(char sign) {
+    private Gender(String sign) {
         this.sign = sign;
     }
 
-    public char getSign() {
+    public String getSign() {
         return sign;
+    }
+
+    public static Gender fromSign(String sign) {
+        for (Gender gender : values()) {
+            if (gender.getSign()
+                    .equals(sign)) {
+                return gender;
+            }
+        }
+        throw new IllegalArgumentException("Érvénytelen nem azonosító.");
     }
 
 }

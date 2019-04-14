@@ -22,6 +22,7 @@ public class PersonResultSetHandler implements ResultSetHandler<Person> {
 			Gender gender = rs.getInt("GENDER")=='M' ? Gender.MALE : Gender.FEMALE;
 			String userName = rs.getString("USER_NAME");
 			String email = rs.getString("EMAIL");
+			String password= rs.getString("PASSWORD");
 			java.sql.Date dob = rs.getDate("DATE_OF_BIRTH");
 			LocalDate dateOfBirth = LocalDate.of(dob.getYear() + 1900,
 												dob.getMonth() + 1,
@@ -38,6 +39,7 @@ public class PersonResultSetHandler implements ResultSetHandler<Person> {
 								gender,
 								userName,
 								email,
+								password,
 								dateOfBirth,
 								orientationID,
 								lastOnline,

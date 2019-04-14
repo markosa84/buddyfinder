@@ -9,11 +9,11 @@ import hu.ak_akademia.buddyfinder.dao.sql.SqlWriter;
 
 public interface DataBaseDao<T> {
 
-    void create(T entity);
+    void create(SqlBuilder sqlBuilder, SqlWriter<T> sqlWriter);
 
-    void update(T entity);
+    void update(SqlBuilder sqlBuilder, SqlWriter<T> sqlWriter);
 
-    void delete(T entity);
+    void delete(SqlBuilder sqlBuilder, SqlWriter<T> sqlWriter);
 
     List<T> read(SqlBuilder sqlBuilder, SqlWriter<T> sqlWriter, SqlReader<T> sqlReader);
 
